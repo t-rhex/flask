@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 # Need to create app now
 # Importing class and making an object of the class
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-  return "<p>Hello Andrew </p>"
+  return render_template('home.html')
 
 
 print(__name__)
