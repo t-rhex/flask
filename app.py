@@ -5,10 +5,31 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+JOBS = [{
+    'id': 1,
+    'title': 'Data Analyst',
+    'location': 'Benga, India',
+    'salary': '$ 120,000'
+}, {
+    'id': 2,
+    'title': 'Software Engineer',
+    'location': 'Delhi, India',
+    'salary': 'Rs. 12,00,000'
+}, {
+    'id': 3,
+    'title': 'Business Analyst',
+    'location': 'Chennai, India'
+}, {
+    'id': 4,
+    'title': 'Intern',
+    'location': 'NY, USA',
+    'salary': '$60,000'
+}]
+
 
 @app.route("/")
 def hello_world():
-  return render_template('home.html')
+  return render_template('home.html', jobs=JOBS, company_name='Andreew')
 
 
 print(__name__)
