@@ -1,0 +1,12 @@
+<div class="columns  is-vcentered pl-0" style="margin-bottom: 16px">
+  <div class="column">
+      <h1 class="title is-6 mt-0 mb-0">{{job['title']}}</h1>
+      <p>Location:{{job['location']}}</p>
+      {% if 'salary' in job %}
+      <p>Salary:{{job['salary']}}</p>
+      {% endif %}
+  </div>
+  <div class="column has-text-right">
+    <button class="button is-link is-light is-responsive">Apply now</button>
+  </div>
+</div>
