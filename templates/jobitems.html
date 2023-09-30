@@ -3,7 +3,10 @@
       <h1 class="title is-6 mt-0 mb-0">{{job['title']}}</h1>
       <p>Location:{{job['location']}}</p>
       {% if 'salary' in job %}
-      <p>Salary:{{job['salary']}}</p>
+        <p>Salary:{{job['salary']}}</p>
+      {% endif %}
+      {% if 'requirements' in job %}
+        <p>Requirements:{{job['requirements']}}</p>
       {% endif %}
   </div>
   <div class="column has-text-right">
