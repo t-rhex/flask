@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 # Need to create app now
 # Importing class and making an object of the class
@@ -30,6 +30,11 @@ JOBS = [{
 @app.route("/")
 def hello_world():
   return render_template('home.html', jobs=JOBS, company_name='Andreew')
+
+
+@app.route("/api/jobs")
+def list_job():
+  return jsonify(JOBS)
 
 
 print(__name__)
