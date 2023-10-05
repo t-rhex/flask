@@ -4,4 +4,4 @@ sqlalchemy
 requests
 pymysql
 uuid
-
+mysql
