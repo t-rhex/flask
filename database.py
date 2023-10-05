@@ -1,10 +1,12 @@
 from sqlalchemy import create_engine, text, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
-db_host = os.environ['DATABASE_HOST']
-db_username = os.environ['DATABASE_USERNAME']
-db_secret = os.environ['DATABASE_PASSWORD']
+db_host = os.getenv("DATABASE_HOST")
+db_username = os.getenv("DATABASE_USERNAME")
+db_secret = os.getenv ("DATABASE_PASSWORD")
 
 connection_string = f"mysql+mysqlconnector://{db_username}:{db_secret}@{db_host}:3306/andrewcareers"
 engine = create_engine(connection_string, echo=True)

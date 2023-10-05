@@ -1,167 +1,129 @@
 <!-- job_form.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
-  <body>
-    <div class="section">
-      <div class="container">
-        <h3 class="title has-text-centered">JOB SUBMIT PORTAL</h3>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="section">
+    <div class="container">
+      <h3 class="title has-text-centered">JOB SUBMIT PORTAL</h3>
     </div>
-    <div class="section">
-      <div class="container">
-        <div class="box">
-          <form method="POST" action="/career/api/post_job" id="jobForm">
-            <div class="field">
-              <div class="control">
-                <input
-                  class="input"
-                  type="text"
-                  id="title"
-                  name="title"
-                  placeholder="Position"
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control has-icons-left has-icons-right">
-                <input
-                  class="input"
-                  type="text"
-                  name="location"
-                  id="location"
-                  placeholder="Location"
-                />
-                <span class="icon is-left">
-                  <i class="fa-solid fa-location-dot"></i>
-                </span>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control has-icons-left has-icons-right">
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Salary"
-                  name="salary"
-                />
-                <span class="icon is-left">
-                  <i class="fa-solid fa-money-bill"></i>
-                </span>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control has-icons-left has-icons-right">
-                <input
-                  class="input"
-                  type="text"
-                  id="currency"
-                  name="currency"
-                  placeholder="Currency"
-                />
-                <span class="icon is-left">
-                  <i class="fa-solid fa-dollar-sign"></i>
-                </span>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control">
-                <textarea
-                  id="responsibilities"
-                  class="textarea"
-                  placeholder="Responsibilities"
-                  name="responsibilities"
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control">
-                <textarea
-                  id="requirements"
-                  class="textarea"
-                  placeholder="Requirements"
-                  name="requirements"
-                ></textarea>
-              </div>
-            </div>
-
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="box">
+        <form method="POST" action="/career/api/post_job" id="jobForm">
+          <div class="field">
             <div class="control">
-              <button type="submit" class="button is-link">Submit</button>
+              <input class="input" type="text" id="title" name="title" placeholder="Position" />
             </div>
-          </form>
-        </div>
+          </div>
+
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" name="location" id="location" placeholder="Location" />
+              <span class="icon is-left">
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Salary" name="salary" />
+              <span class="icon is-left">
+                <i class="fa-solid fa-money-bill"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" id="currency" name="currency" placeholder="Currency" />
+              <span class="icon is-left">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <textarea id="responsibilities" class="textarea" placeholder="Responsibilities"
+                name="responsibilities"></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <textarea id="requirements" class="textarea" placeholder="Requirements" name="requirements"></textarea>
+            </div>
+          </div>
+
+          <div class="control">
+            <button type="submit" class="button is-link">Submit</button>
+          </div>
+        </form>
       </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const jobForm = document.getElementById("jobForm");
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const jobForm = document.getElementById("jobForm");
 
-        jobForm.addEventListener("submit", async function (event) {
-          event.preventDefault();
+      jobForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-          const formData = new FormData(jobForm);
+        const formData = new FormData(jobForm);
 
-          try {
-            const response = await fetch("/career/api/post_job", {
-              method: "POST",
-              body: formData,
+        try {
+          const response = await fetch("/career/api/post_job", {
+            method: "POST",
+            body: formData,
+          });
+
+          if (response.ok) {
+            // Assuming the server returns a JSON response with a job_id property
+            const responseData = await response.json();
+            const job_id = responseData.job_id;
+            console.log(job_id)
+
+            // Show success popup
+            Swal.fire({
+              icon: "success",
+              title: "Success!",
+              text: "Job posted successfully",
+            }).then(() => {
+              // Redirect to the job details page
+              window.location.href = `/career/api/job/${job_id}`;
             });
-
-            if (response.ok) {
-              // Assuming the server returns a JSON response with a job_id property
-              const responseData = await response.json();
-              const job_id = responseData.job_id;
-              console.log(job_id)
-
-              // Show success popup
-              Swal.fire({
-                icon: "success",
-                title: "Success!",
-                text: "Job posted successfully",
-              }).then(() => {
-                // Redirect to the job details page
-                window.location.href = `/career/api/job/${job_id}`;
-              });
-            } else {
-              // Show error popup
-              Swal.fire({
-                icon: "error",
-                title: "Error!",
-                text: "Failed to post job",
-              });
-            }
-          } catch (error) {
-            console.error("Error:", error);
+          } else {
+            // Show error popup
             Swal.fire({
               icon: "error",
               title: "Error!",
               text: "Failed to post job",
             });
           }
-        });
+        } catch (error) {
+          console.error("Error:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Failed to post job",
+          });
+        }
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

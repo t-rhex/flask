@@ -5,3 +5,4 @@ requests
 pymysql
 uuid
 mysql-connector-python
+python-dotenv
