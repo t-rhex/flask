@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    
+
     <style>
       /* Background styles */
       #job-section {
@@ -108,34 +108,36 @@
       </div>
     </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const jobSearchInput = document.getElementById("jobSearchInput");
-  const jobSearchButton = document.getElementById("jobSearchButton"); // Add this line
-  const jobsContainer = document.querySelector(".mb-5");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const jobSearchInput = document.getElementById("jobSearchInput");
+        const jobSearchButton = document.getElementById("jobSearchButton"); // Add this line
+        const jobsContainer = document.querySelector(".mb-5");
 
-  // Add an event listener for the search button
-  jobSearchButton.addEventListener("click", function () {
-    const searchQuery = jobSearchInput.value.toLowerCase();
+        // Add an event listener for the search button
+        jobSearchButton.addEventListener("click", function () {
+          const searchQuery = jobSearchInput.value.toLowerCase();
 
-    // Filter the jobs based on the search query
-    const filteredJobs = jobs.filter(function (job) {
-      const title = job.title.toLowerCase();
-      const location = job.location.toLowerCase();
-      // Add more criteria for filtering if needed
+          // Filter the jobs based on the search query
+          const filteredJobs = jobs.filter(function (job) {
+            const title = job.title.toLowerCase();
+            const location = job.location.toLowerCase();
+            // Add more criteria for filtering if needed
 
-      // Check if the search query matches any job details
-      return title.includes(searchQuery) || location.includes(searchQuery);
-    });
+            // Check if the search query matches any job details
+            return (
+              title.includes(searchQuery) || location.includes(searchQuery)
+            );
+          });
 
-    // Clear the current job list
-    jobsContainer.innerHTML = "";
+          // Clear the current job list
+          jobsContainer.innerHTML = "";
 
-    // Render the filtered jobs
-    for (const job of filteredJobs) {
-      // Create and append job items (similar to your existing code)
-      const jobItem = document.createElement("div");
-      jobItem.innerHTML = `
+          // Render the filtered jobs
+          for (const job of filteredJobs) {
+            // Create and append job items (similar to your existing code)
+            const jobItem = document.createElement("div");
+            jobItem.innerHTML = `
         <div class="job-item">
           <h2>${job.title}</h2>
           <p>Location: ${job.location}</p>
@@ -143,19 +145,12 @@
           ${job.requirements ? `<p>Requirements: ${job.requirements}</p>` : ""}
         </div>
       `;
-      jobsContainer.appendChild(jobItem);
-    }
-  });
-});
+            jobsContainer.appendChild(jobItem);
+          }
+        });
+      });
+    </script>
 
-</script>
-
-
-
-
-
-
-    
     <footer class="footer">{% include 'footer.html' %}</footer>
   </body>
 </html>
