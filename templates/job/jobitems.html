@@ -1,0 +1,20 @@
+<div class="columns  is-vcentered pl-0" style="margin-bottom: 16px">
+  <div class="column">
+    
+      <div class="is-vcentered">
+        <span class="tag is-success is-light">JOB ID: {{job['job_id']}}</span>
+        <h1 class="title is-size-4-touch is-size-4-tablet	 mt-0 mb-0 mr-2">{{job['title']}}</h1>
+      </div>
+      
+      <p>Location:{{job['location']}}</p>
+      {% if 'salary' in job %}
+        <p>Salary:{{job['salary']}}</p>
+      {% endif %}
+      {% if 'requirements' in job %}
+        <p>Requirements:{{job['requirements']}}</p>
+      {% endif %}
+  </div>
+  <div class="column has-text-right has-text-left-mobile">
+    <button class="button is-link is-light">Apply now</button>
+  </div>
+</div>
