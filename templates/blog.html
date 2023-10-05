@@ -1,0 +1,32 @@
+<div class="columns is-multiline">
+  {% if user_data and user_data.recent_posts %} {% for post in
+  user_data.recent_posts %}
+  <div class="column is-one-third">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{ post.coverImage }}" alt="Cover image" />
+        </figure>
+      </div>
+      <div class="card-content">
+        <p class="title is-5">{{ post.title }}</p>
+        <div class="content">
+          <br />
+          <p>{{ post.brief }}</p>
+          <p>Date Added: {{ post.dateAdded }}</p>
+          <p>Read Time: {{ post.readTime }} minute(s)</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a
+          href="https://blog.andreew.dev/{{ post.slug }}"
+          class="card-footer-item"
+          >Read More</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %} {% else %}
+  <p>No recent posts available.</p>
+  {% endif %}
+</div>
