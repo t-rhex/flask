@@ -1,3 +1,11 @@
+# Replit ignore 
+
+.replit
+replit.nix
+poetry.lock
+pyproject.toml
+.pythonlibs
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
