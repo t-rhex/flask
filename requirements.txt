@@ -1,0 +1,8 @@
+Flask
+gunicorn
+sqlalchemy
+requests
+logging
+pymysql
+math
+uuid
