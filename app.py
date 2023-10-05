@@ -6,11 +6,8 @@ from sqlalchemy.ext.declarative import declarative_base
 import uuid
 from math import ceil
 import requests
-import logging
 
 app = Flask(__name__)
-
-logger = logging.getLogger(__name__)
 
 
 # Generate a random job ID
@@ -153,5 +150,4 @@ def posts():
 
 
 if __name__ == "__main__":
-  logging.basicConfig(filename='app.log', level=logging.DEBUG)
   app.run(host='0.0.0.0', debug=True)
