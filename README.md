@@ -20,3 +20,6 @@ e.g : docker image build -t andrew_portfolio .
 docker run -p 5000:5000 -d <image_name>
 
 ### Served through portainer and reverse proxied by nginx proxy manager 
+
+
+<img width="1122" alt="image" src="https://github.com/t-rhex/flask/assets/44456213/03f65d2f-5872-4853-aa12-1e32378dc986">
