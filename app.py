@@ -70,10 +70,7 @@ def post_job():
   response_data = {'job_id': new_job.id}
   return jsonify(response_data)
 
-
-# Blog pull from HASHNODE
-
-# Your GraphQL query
+# GraphQL query to pull blog posts from Hashnode
 graphql_query = """
 {
   user(username: "andrewadhikari") {
