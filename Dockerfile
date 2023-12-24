@@ -15,4 +15,4 @@ COPY . /app
 EXPOSE 8000
 
 # Define the command to start Gunicorn with your Flask application
-CMD ["gunicorn", "app:app", "-b", "0.0.0.0:8000"]
+CMD ["gunicorn", "app:app", "-b", "0.0.0.0:8000" "--timeout", "90"]
